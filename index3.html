@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //For example, suppose you’re a new programmer and you’re asked to write a program that
+      // reads ten numbers and figures out which number is the third highest.
+      // For a brand-new programmer, that can be a tough assignment, even though it only
+      // requires basic programming syntax. If you’re stuck, you should reduce the problem to something simpler.
+      // Instead of the third-highest number, what about finding the highest overall? Still too tough?
+      // What about finding the largest of just three numbers? Or the larger of two?
+      // Reduce the problem to the point where you know how to solve it and write the solution.
+      // Then expand the problem slightly and rewrite the solution to match, and keep going until you are
+      // back where you started.”
+
+      function bigggestNumber(a, b, c) {
+        if (a >= b && a >= c) {
+          return "A is the largest";
+        } else if (b >= c && b >= a) {
+          return "B is the largest";
+        } else if (c >= a && c >= b) {
+          return "C is the largest";
+        } else {
+          return "Invalid Values";
+        }
+      }
+
+      answer_a = parseInt(prompt("What is you vaue for a?: "));
+      answer_b = parseInt(prompt("What is you vaue for b?: "));
+      answer_c = parseInt(prompt("What is you vaue for c?: "));
+
+      console.log(bigggestNumber(answer_a, answer_b, answer_c));
+
+      // Now to find the highest value in 10 numbers
+      num = [];
+
+      for (let i = 0; i < 10; i++) {
+        input = parseInt(prompt("Enter number " + (i + 1) + ":"));
+        num.push(input);
+      }
+
+      function getHighestNumber() {
+        numberArray = num.sort((a, b) => b - a);
+        highestNumber = numberArray[0];
+        return console.log("The highest number is: " + highestNumber);
+      }
+      getHighestNumber();
+    </script>
+  </head>
+  <body></body>
+</html>
