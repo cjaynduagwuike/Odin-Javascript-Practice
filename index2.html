@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // First Task
+      const add7 = (num) => num + 7;
+      console.log(add7(10));
+
+      // Second Task
+      const multiply = (num1, num2) => num1 * num2;
+      console.log(multiply(3, 2));
+
+      // Third Task
+      function capitalize(word) {
+        firstletterCapped =
+          word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        return firstletterCapped;
+      }
+      console.log(capitalize("abcd"));
+      console.log(capitalize("ABCD"));
+      console.log(capitalize("ABCD"));
+      console.log(capitalize("aBcD"));
+
+      // Fourth Task
+      function lastLetter(word) {
+        lastletter = word.at(-1);
+        return lastletter;
+      }
+      console.log(lastLetter("abcd"));
+
+      // Fifth Task
+      let answer = parseInt(
+        prompt("What is the number you wish to FizzBuzz to?: "),
+      );
+
+      for (let i = 1; i <= answer; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+        } else {
+          console.log(i);
+        }
+      }
+
+      // Sixth Task
+      for (let i = 1; i <= 100; i += 2) {
+        console.log(i);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
