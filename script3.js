@@ -20,8 +20,9 @@ function getUserInput() {
 
   while (!isValid) {
     let firstRound = 0;
-    if (firstRound === 1) {
-      let userChoice = +prompt(
+    let userChoice;
+    if (firstRound < 1) {
+      userChoice = +prompt(
         "Choose a set of numbers to find the highest possible subset of(one at a time)",
         0,
       );
@@ -33,6 +34,35 @@ function getUserInput() {
     );
     inputArr.push(userChoice);
     inputArr.push(nextUserChoice);
-    if (userChoice === "" || value === null || !isFinite(value)) break;
+    if (
+      userChoice === "" ||
+      userChoice === null ||
+      !isFinite(userChoice) ||
+      nextUserChoice === "" ||
+      nextUserChoice === null ||
+      !isFinite(nextUserChoice)
+    ) {
+      break;
+    }
   }
 }
+
+function getMaxSubSum(userInput) {
+  getUserInput();
+  userInput = inputArr;
+  let maxSum = 0;
+
+  for (let i = 0; i < userInput.length; i++) {
+    let sumFixedStart = 0;
+    for (let j = i; j < userInput.length; j++) {
+      sumFixedStart += userInput[j];
+      maxSum = Math.max(maxSum, sumFixedStart);
+    }
+  }
+  return maxSum;
+}
+// So I need to get the users input
+// Turn the input into an array
+// Take the input in an array
+// Get each value in the array
+// Using a for loop check to see if the sum of two specific values in the array is greater than the sum of any other values in the array
