@@ -19,16 +19,20 @@ function getUserInput() {
   let isValid = false;
 
   while (!isValid) {
-    let userChoice = +prompt(
-      "Choose a set of numbers to find the highest possible subset of(one at a time)",
-      0,
-    );
+    let firstRound = 0;
+    if (firstRound === 1) {
+      let userChoice = +prompt(
+        "Choose a set of numbers to find the highest possible subset of(one at a time)",
+        0,
+      );
+      firstRound += 1;
+    }
     let nextUserChoice = +prompt(
       "Next Value (if you are done click Cancel):",
       0,
     );
     inputArr.push(userChoice);
     inputArr.push(nextUserChoice);
-    if (value === "" || value === null || !isFinite(value)) break;
+    if (userChoice === "" || value === null || !isFinite(value)) break;
   }
 }
