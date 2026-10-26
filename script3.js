@@ -48,8 +48,6 @@ function getUserInput() {
 }
 
 function getMaxSubSum(userInput) {
-  getUserInput();
-  userInput = inputArr;
   let maxSum = 0;
 
   for (let i = 0; i < userInput.length; i++) {
@@ -61,8 +59,19 @@ function getMaxSubSum(userInput) {
   }
   return maxSum;
 }
-// So I need to get the users input
-// Turn the input into an array
-// Take the input in an array
-// Get each value in the array
-// Using a for loop check to see if the sum of two specific values in the array is greater than the sum of any other values in the array
+
+// Second way
+function getMaxSubSum2(userInput) {
+  let maxSum = 0;
+  let partialSum = 0;
+
+  for (let item of userInput) {
+    partialSum += item;
+    maxSum = Math.max(maxSum, partialSum);
+  }
+  if (partialSum < 0) partialSum = 0; // zero if negative
+
+  return maxSum;
+}
+alert(getMaxSubSum2([-1, 2, 3, -9]));
+alert(getMaxSubSum2([100, -9, 2, -3, 5]));
