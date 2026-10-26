@@ -68,8 +68,8 @@ function getMaxSubSum2(userInput) {
   for (let item of userInput) {
     partialSum += item;
     maxSum = Math.max(maxSum, partialSum);
+    if (partialSum < 0) partialSum = 0; // zero if negative
   }
-  if (partialSum < 0) partialSum = 0; // zero if negative
 
   return maxSum;
 }
