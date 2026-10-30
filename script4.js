@@ -15,7 +15,7 @@ function filterRange(array, a, b) {
 }
 let arr = [5, 3, 8, 1];
 
-let filtered = filterRange(arr, 2, 9);
+let filtered = filterRange(arr, 1, 3);
 
 console.log(filtered); // 3,1 (matching values)
 
