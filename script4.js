@@ -9,3 +9,14 @@ function camelize(str) {
     .join("");
 }
 console.log(camelize("background-color"));
+
+function filterRange(array, a, b) {
+  return array.filter((item) => item >= a && item <= b);
+}
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 2, 9);
+
+console.log(filtered); // 3,1 (matching values)
+
+console.log(arr); // 5,3,8,1 (not modified)
