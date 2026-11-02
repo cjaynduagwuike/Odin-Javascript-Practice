@@ -112,11 +112,9 @@ console.log(professionalShuffle(arr));
 function unique(arr) {
   /* your code */
   let uniqueArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let item of arr) {
-      if (!uniqueArray.includes(item, 0)) {
-        uniqueArray.push(item);
-      }
+  for (let item of arr) {
+    if (!uniqueArray.includes(item, 0)) {
+      uniqueArray.push(item);
     }
   }
   return uniqueArray;
