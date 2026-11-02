@@ -107,3 +107,31 @@ function professionalShuffle(array) {
 
 console.log(professionalShuffle(arr));
 console.log(professionalShuffle(arr));
+
+// New Question
+function unique(arr) {
+  /* your code */
+  let uniqueArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let item of arr) {
+      if (!uniqueArray.includes(item, 0)) {
+        uniqueArray.push(item);
+      }
+    }
+  }
+  return uniqueArray;
+}
+
+let strings = [
+  "Hare",
+  "Krishna",
+  "Hare",
+  "Krishna",
+  "Krishna",
+  "Krishna",
+  "Hare",
+  "Hare",
+  ":-O",
+];
+
+console.log(unique(strings)); // Hare, Krishna, :-O
